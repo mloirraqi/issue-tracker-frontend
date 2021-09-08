@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './scss/style.scss'
+import AppHeader from "./views/pages/common/header/AppHeader";
+import AppFooter from "./views/pages/common/footer/AppFooter";
 
 const loading = (
     <div className="pt-3 text-center">
@@ -10,11 +12,14 @@ const loading = (
 
 const Login = React.lazy(() => import('./views/pages/login/Login'))
 const Register = React.lazy(() => import('./views/pages/register/Register'))
+const NewProject = React.lazy(() => import('./views/pages/project/NewProject'))
+const Project = React.lazy(() => import('./views/pages/project/Project'))
+const Home = React.lazy(() => import('./views/pages/home/Home'))
 
 class App extends Component {
     render() {
         return (
-            <HashRouter>
+            <Router>
                 <React.Suspense fallback={loading}>
                     <Switch>
                         <Route
@@ -31,10 +36,20 @@ class App extends Component {
                             exact
                             path="/"
                             name="Home"
-                            render={() => <div>home</div>}/>
+                            render={(props) => <Home {...props} />}/>
+                        <Route
+                            exact
+                            path="/project/:projectId"
+                            name="Project"
+                            render={(props) => <Project {...props} />}/>
+                        <Route
+                            exact
+                            path="/new"
+                            name="New project"
+                            render={(props) => <NewProject {...props} />}/>
                     </Switch>
                 </React.Suspense>
-            </HashRouter>
+            </Router>
         )
     }
 }

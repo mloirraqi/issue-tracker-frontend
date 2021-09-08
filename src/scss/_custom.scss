@@ -2,3 +2,42 @@
 .h-10 {
   height: 10px;
 }
+
+.margin-new {
+  margin: 20px;
+}
+
+.at-end {
+  display: flex;
+  flex: 1;
+  margin-left: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.left-tab{
+  padding-left: 10px;
+}
+
+.margin-all{
+  margin: 20px;
+}
+
+.margin-all-top{
+  margin-top: 5px;
+}
+
+.right-new-issue{
+  margin-right: 25%;
+}
+
+.btn-padding{
+  margin-top: 20px;
+}
+
+.table-striped-rows tr:nth-child(2n) td {
+  background-color: #bbbbbb;
+}
+.table-striped-rows thead {
+  background-color: #6f6f6f;
+}

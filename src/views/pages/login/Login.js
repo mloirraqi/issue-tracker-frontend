@@ -28,6 +28,7 @@ const Login = () => {
                 if (res.data === undefined || res.data === '') {
                     alert("Login Error");
                 } else {
+                    localStorage.setItem("jwt",res.data);
                     history.push("/");
                 }
             })

@@ -3,6 +3,14 @@ import qs from 'qs'
 
 let url = "http://localhost:8080"
 
+if(process.env.NODE_ENV === 'development') {
+    url = "http://localhost:8080"
+}
+if(process.env.NODE_ENV === 'production') {
+    //todo: heroku url
+    url = "http://localhost:8080"
+}
+
 function parseError(messages) {
     if (messages) {
         if (messages instanceof Array) {
