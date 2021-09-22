@@ -7,8 +7,7 @@ if(process.env.NODE_ENV === 'development') {
     url = "http://localhost:8080"
 }
 if(process.env.NODE_ENV === 'production') {
-    //todo: heroku url
-    url = "http://localhost:8080"
+    url = "https://mloi-ticket-tracker.herokuapp.com/"
 }
 
 function parseError(messages) {
