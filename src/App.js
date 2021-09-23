@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import './scss/style.scss'
 import AppHeader from "./views/pages/common/header/AppHeader";
 import AppFooter from "./views/pages/common/footer/AppFooter";
@@ -22,6 +22,10 @@ class App extends Component {
             <Router>
                 <React.Suspense fallback={loading}>
                     <Switch>
+                    
+            		<Route exact path="/">
+                		<Redirect to="/register"/>
+            		</Route>
                         <Route
                             exact
                             path="/login"
@@ -34,7 +38,7 @@ class App extends Component {
                             render={(props) => <Register {...props} />}/>
                         <Route
                             exact
-                            path="/"
+                            path="/home"
                             name="Home"
                             render={(props) => <Home {...props} />}/>
                         <Route
@@ -47,6 +51,10 @@ class App extends Component {
                             path="/new"
                             name="New project"
                             render={(props) => <NewProject {...props} />}/>
+                            
+            		<Route path="*">
+                		<Redirect to={"/home"}/>
+            		</Route>
                     </Switch>
                 </React.Suspense>
             </Router>

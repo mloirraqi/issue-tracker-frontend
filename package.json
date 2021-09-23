@@ -8,7 +8,7 @@
   "author": {
     "name": "mloi"
   },
-  "homepage": "https://mloirraqi.github.io/issue-tracker-frontend",
+  "homepage": ".",
   "license": "MIT",
   "private": true,
   "dependencies": {
