@@ -29,7 +29,7 @@ const Login = () => {
                     alert("Login Error");
                 } else {
                     localStorage.setItem("jwt",res.data);
-                    history.push("/");
+                    history.push("/home");
                 }
             })
             .catch((err) => {
